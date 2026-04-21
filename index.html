@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Multi Página</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<div class="form-container">
+
+    <!-- Página 1 -->
+    <div class="page active" id="page1">
+        <h2>Datos Personales</h2>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="number" id="edad" placeholder="Edad">
+         <button onclick="nextPage(2)">Siguiente</button>        
+    </div>
+
+    <div class="progress-bar">
+    <div class="progress" id="progress"></div>
+</div>
+
+    <!-- Página 2 -->
+    <div class="page" id="page2">
+        <h2>Familiares</h2>
+        <input type="text" id="famNombre" placeholder="Nombre">
+        <input type="text" id="parentesco" placeholder="Parentesco">
+        <input type="number" id="famEdad" placeholder="Edad">
+        <button onclick="agregarFamiliar()">Agregar</button>
+        <ul id="listaFamiliares"></ul>
+        <div class="nav-buttons">
+        <button onclick="prevPage(1)">Anterior</button>
+        <button onclick="nextPage(3)">Siguiente</button>
+     </div>
+    </div>
+
+    <!-- Página 3 -->
+    <div class="page" id="page3">
+        <h2>Condiciones de Salud</h2>
+        <input type="text" id="enfermedad" placeholder="Enfermedad">
+        <input type="text" id="tiempo" placeholder="Tiempo">
+        <button onclick="agregarCondicion()">Agregar</button>
+        <ul id="listaCondiciones"></ul>
+        <div class="nav-buttons">
+        <button onclick="prevPage(2)">Anterior</button>
+          <button onclick="nextPage(4)">Siguiente</button>
+        </div>  
+  </div>
+
+    <!-- Página 4 -->
+    <div class="page" id="page4">
+        <h2>Internamientos</h2>
+        <input type="date" id="fecha">
+        <input type="text" id="centro" placeholder="Centro Médico">
+        <input type="text" id="diagnostico" placeholder="Diagnóstico">
+        <button onclick="agregarInternamiento()">Agregar</button>
+        <ul id="listaInternamientos"></ul>
+        <div class="nav-buttons">
+         <button onclick="prevPage(3)">Anterior</button>
+         <button onclick="nextPage(5)">Siguiente</button>
+         </div>  
+  </div>
+
+    <!-- Página 5 -->
+    <div class="page" id="page5">
+        <h2>Resumen</h2>
+        <pre id="resultado"></pre>
+
+        <button onclick="mostrarDatos()">Mostrar Datos</button>
+        <button onclick="guardarDatos()">Grabar</button>
+        <button onclick="cargarDatos()">Cargar</button>
+        <button onclick="reiniciarFormulario()">Reiniciar</button>
+        <div class="nav-buttons">
+        <button onclick="prevPage(4)">Anterior</button>
+       </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
